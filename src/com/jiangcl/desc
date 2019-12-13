@@ -1,0 +1,22 @@
+Java Web
+    servlet容器（Tomcat就是一个servlet容器）
+        可以创建servlet，并调用servlet的相关生命周期
+
+    servlet生命周期（以下方法都是由servlet容器负责调用）
+        1、构造器：只有第一次请求Servlet时，创建Servlet的实例，调用构造器。只被调用一次（servlet是单例的）
+        2、innit()：只被调用一次，在创建好实例后立即被调用，用于初始化当前servlet。
+        3、service()：被多次调用，每次请求都会调用此方法，用于响应请求。
+        4、destroy()：只被调用一次，在当前servlet所在的web应用被卸载（停止）前调用，用于释放当前servlet占用的资源。
+
+    load-on-startup参数
+        可以指定servlet被创建的时机，若为负数，则在第一次请求时被创建，
+        若为0或者正数，则在当前应用被servlet容器加载时创建实例并进行初始化，数字越小越早被创建。
+
+
+ServletConfig
+        封装了servlet的配置信息，并且可以获取ServletContext对象
+
+ServletContext（上下文）
+        概念：ServletContext代表当前web应用，可以认为ServletContext是当前web应用的一个大管家，可以从中获取到当前web应用的各个方面的信息。
+        可以由ServletConfig获取
+
