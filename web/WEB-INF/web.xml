@@ -45,6 +45,33 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>myHttpServlet</servlet-name>
+        <servlet-class>com.jiangcl.elementary.MyHttpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>myHttpServlet</servlet-name>
+        <url-pattern>/myHttpServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>forWardServlet</servlet-name>
+        <servlet-class>com.jiangcl.elementary.ForWardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>forWardServlet</servlet-name>
+        <url-pattern>/forWardServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>redirectServlet</servlet-name>
+        <servlet-class>com.jiangcl.elementary.RedirectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>redirectServlet</servlet-name>
+        <url-pattern>/redirectServlet</url-pattern>
+    </servlet-mapping>
+
     <!--
     映射jsp文件
     <servlet>

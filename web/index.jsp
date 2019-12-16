@@ -13,4 +13,6 @@
   <body>
   hello word
   </body>
+  <a href="/myHttpServlet?method=forWard">转发</a>
+  <a href="/myHttpServlet?method=redirect">重定向</a>
 </html>
