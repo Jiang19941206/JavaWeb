@@ -20,3 +20,39 @@ ServletContext（上下文）
         概念：ServletContext代表当前web应用，可以认为ServletContext是当前web应用的一个大管家，可以从中获取到当前web应用的各个方面的信息。
         可以由ServletConfig获取
 
+Cookie（客户端保持Http状态信息的方案）
+      java web中使用Cookie类代表cookie
+
+      在浏览器首次访问服务器时，由于没有cookie信息，所以没有传cookie给服务器，
+      当服务器创建一个cookie，并将它发送到浏览器，默认情况下（浏览器没有禁用cookie）它是一个会话级别的cookie，存储在浏览器的内存中，用户退出浏览器后会被删除
+      若希望浏览器将该cookie存储在磁盘上，则需要使用setMaxAge(int time)，并给出一个以秒为单位的时间，若时间为0 ，则代表命令浏览器立即删除该cookie，如果为负数则代表cookie永远不会被储存
+      当浏览器有cookie，并且未禁用cookie时，下一次请求会自动带上cookie的信息到服务器
+
+      setPath(String url)是指cookie的作用路径，只有访问该路径时该cookie才生效。
+            例如：cookie.setPath("/cookie"); 只对http://localhost:8080/cookie才生效
+
+      步骤：
+      1、创建一个Cookie对象
+      2、调用response的一个方法把cookie传给客户端
+
+Session（服务器端保持Http状态信息的方案）
+      概念：用来在客户端与服务器之间保持状态的解决方案，有时候Session也用来指这种解决方案的存储结构
+      保存sessionId的方式
+            1、将sessionId保存到cookie中
+            2、将sessionId附加在url后面
+
+      Session的生命周期
+        创建：
+            访问第一个可以创建session对象的页面或servlet时会创建一个session对象。
+                如何阻止页面创建session对象
+                        page指令session="false"时，此页面只能使用其他页面或者由servlet创建的session对象，而不能自己创建session对象
+                        <%@ page contentType="text/html;charset=UTF-8" language="java" session="false" %>
+
+        销毁（由于cookie是可以持久化的，所以并不是关闭了浏览器session就失效了）：
+            1、调用session.invalidate()方法。
+            2、停止当前web应用。
+            3、session超过Session对象的过期时间，setMaxInactiveInterval(int time) 单位为秒。
+                或者使用web.xml配置时间单位为秒
+                <session-config>
+                    <session-timeout>time</session-timeout>
+                </session-config>

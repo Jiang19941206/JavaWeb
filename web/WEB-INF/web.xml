@@ -90,6 +90,15 @@
         <url-pattern>/role.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>cookieServlet</servlet-name>
+        <servlet-class>com.jiangcl.cookie.CookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cookieServlet</servlet-name>
+        <url-pattern>/cookie.do</url-pattern>
+    </servlet-mapping>
+
     <!--映射jsp文件-->
     <servlet>
         <servlet-name>index1</servlet-name>
@@ -116,5 +125,14 @@
     <servlet-mapping>
         <servlet-name>role</servlet-name>
         <url-pattern>/role</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>cookie</servlet-name>
+        <jsp-file>/cookie.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cookie</servlet-name>
+        <url-pattern>/cookie</url-pattern>
     </servlet-mapping>
 </web-app>
