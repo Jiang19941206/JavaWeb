@@ -27,9 +27,11 @@ public class MyHttpServlet extends HttpServlet {
         if("forWard".equals(method)){
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("/forWardServlet");
             requestDispatcher.forward(req,resp);
-        }else {
+        }else if("redirect".equals(method)){
             //重定向
             resp.sendRedirect("/redirectServlet");
+        }else {
+            resp.sendRedirect("/index1");
         }
 
     }

@@ -72,14 +72,49 @@
         <url-pattern>/redirectServlet</url-pattern>
     </servlet-mapping>
 
-    <!--
-    映射jsp文件
     <servlet>
-        <servlet-name>asd</servlet-name>
-        <jsp-file></jsp-file>
+        <servlet-name>userServlet</servlet-name>
+        <servlet-class>com.jiangcl.publicservlet.UserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>asd</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>-->
+        <servlet-name>userServlet</servlet-name>
+        <url-pattern>/user.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>roleServlet</servlet-name>
+        <servlet-class>com.jiangcl.publicservlet.RoleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>roleServlet</servlet-name>
+        <url-pattern>/role.do</url-pattern>
+    </servlet-mapping>
+
+    <!--映射jsp文件-->
+    <servlet>
+        <servlet-name>index1</servlet-name>
+        <jsp-file>/index1.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index1</servlet-name>
+        <url-pattern>/index1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>user</servlet-name>
+        <jsp-file>/user.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>user</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>role</servlet-name>
+        <jsp-file>/role.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>role</servlet-name>
+        <url-pattern>/role</url-pattern>
+    </servlet-mapping>
 </web-app>

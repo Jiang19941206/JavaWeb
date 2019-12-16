@@ -8,12 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>首页</title>
+    <title>角色管理</title>
   </head>
   <body>
-  hello word
+    <a href="/role.do?method=addRole">添加角色</a>
+    <br>
+    <a href="/role.do?method=updateRole">更新角色</a>
   </body>
-  <a href="/myHttpServlet?method=forWard">转发</a>
-  <a href="/myHttpServlet?method=redirect">重定向</a>
-  <a href="/myHttpServlet?method=index1">重定向到一个页面</a>
 </html>
