@@ -99,6 +99,24 @@
         <url-pattern>/cookie.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>sessionServlet</servlet-name>
+        <servlet-class>com.jiangcl.session.SessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sessionServlet</servlet-name>
+        <url-pattern>/session.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>verificationCode</servlet-name>
+        <servlet-class>com.jiangcl.session.VerificationCodeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>verificationCode</servlet-name>
+        <url-pattern>/verification.do</url-pattern>
+    </servlet-mapping>
+
     <!--映射jsp文件-->
     <servlet>
         <servlet-name>index1</servlet-name>
@@ -134,5 +152,32 @@
     <servlet-mapping>
         <servlet-name>cookie</servlet-name>
         <url-pattern>/cookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>session</servlet-name>
+        <jsp-file>/session.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>session</servlet-name>
+        <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>sessionForm</servlet-name>
+        <jsp-file>/sessionForm.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sessionForm</servlet-name>
+        <url-pattern>/sessionForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>sessionLogin</servlet-name>
+        <jsp-file>/sessionLogin.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sessionLogin</servlet-name>
+        <url-pattern>/sessionLogin</url-pattern>
     </servlet-mapping>
 </web-app>
