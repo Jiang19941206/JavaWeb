@@ -1,0 +1,15 @@
+使用Filter进行权限验证的小练习
+    过滤器：AuthorityFilter
+    Servlet：AuthorityServlet
+
+    创建一个List<Map<String,String>>
+    四个操作
+        1、增（add）
+        2、删（delete）
+        3、改（update）
+        4、查（select）
+    分别创建不同用户拥有不同的操作权限
+        admin：1、2、3、4
+        jiangcl：1、4
+        zhangsan：1
+        tom：1

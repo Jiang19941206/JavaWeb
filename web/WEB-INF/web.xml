@@ -117,6 +117,53 @@
         <url-pattern>/verification.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>filterServlet</servlet-name>
+        <servlet-class>com.jiangcl.fileter.FilterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>filterServlet</servlet-name>
+        <url-pattern>/filter.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>authority</servlet-name>
+        <servlet-class>com.jiangcl.fileter.authority.AuthorityServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>authority</servlet-name>
+        <url-pattern>/authority.do</url-pattern>
+    </servlet-mapping>
+
+    <!--过滤器映射-->
+    <!--<filter>
+        <filter-name>helloFilter</filter-name>
+        <filter-class>com.jiangcl.fileter.HelloFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>helloFilter</filter-name>
+        &lt;!&ndash;指定filter拦截的资源&ndash;&gt;
+        <url-pattern>/filter.do</url-pattern>
+    </filter-mapping>-->
+
+    <!--<filter>
+        <filter-name>myFilter</filter-name>
+        <filter-class>com.jiangcl.fileter.BaseTestFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>myFilter</filter-name>
+        <url-pattern>/filter.do</url-pattern>
+    </filter-mapping>-->
+
+    <filter>
+        <filter-name>authorityFilter</filter-name>
+        <filter-class>com.jiangcl.fileter.authority.AuthorityFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>authorityFilter</filter-name>
+        <url-pattern>/authority.do</url-pattern>
+    </filter-mapping>
+
     <!--映射jsp文件-->
     <servlet>
         <servlet-name>index1</servlet-name>
@@ -179,5 +226,14 @@
     <servlet-mapping>
         <servlet-name>sessionLogin</servlet-name>
         <url-pattern>/sessionLogin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>filterPage</servlet-name>
+        <jsp-file>/filter.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>filterPage</servlet-name>
+        <url-pattern>/filter</url-pattern>
     </servlet-mapping>
 </web-app>

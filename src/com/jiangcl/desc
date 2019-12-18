@@ -56,3 +56,41 @@ Session（服务器端保持Http状态信息的方案）
                 <session-config>
                     <session-timeout>time</session-timeout>
                 </session-config>
+
+Filter（过滤器）
+        概述：对调用servlet的过程进行拦截，从而在servlet进行响应处理的前后实现一些特殊的功能
+
+        Filter可以对发送到servlet的请求进行拦截，并且对响应也进行拦截
+
+        当有多个过滤器时，拦截顺序：跟xml文件中的filter-mapping顺序有关，在前面的会被先拦截
+        多个filter是的执行顺序
+                System.out.println("filter1 before doFilter");
+                filter1Chain.doFilter(servletRequest,servletResponse);
+
+                System.out.println("filter2 before doFilter");
+                filter2Chain.doFilter(servletRequest,servletResponse);
+
+                System.out.println("filter2 after doFilter");
+
+                System.out.println("filter1 after doFilter");
+
+        dispatcher节点：指定过滤器所拦截的资源被servlet容器调用的方式，
+                        request、include、forward、error之一，默认为request
+                        可以设置多个子元素来制定filter对资源的多种调用方式的拦截
+                        <filter>
+                                <filter-name>helloFilter</filter-name>
+                                <filter-class>com.jiangcl.fileter.HelloFilter</filter-class>
+                            </filter>
+                            <filter-mapping>
+                                <filter-name>helloFilter</filter-name>
+                                <!--指定filter拦截的资源-->
+                                <url-pattern>/*</url-pattern>
+                                <dispatcher>FORWARD</dispatcher>
+                                <dispatcher>REQUEST</dispatcher>
+                            </filter-mapping>
+
+        过滤器禁用浏览器缓存
+                HttpServletResponse response = (HttpServletResponse)servletResponse;
+                response.setDateHeader("Expires",01);
+                response.setHeader("Cache-Control","no-cache");
+                response.setHeader("Pragma","no-cache");
